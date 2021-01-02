@@ -1,0 +1,25 @@
+{
+  "name": "publicblog",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aiwen19950203/publicblog.git"
+  },
+  "author": "shiaiwen <2474577454@qq.com>",
+  "license": "MIT",
+  "description": "publicblog 个人博客搭建",
+  "bugs": {
+    "url": "https://github.com/aiwen19950203/publicblog/issues"
+  },
+  "homepage": "https://github.com/aiwen19950203/publicblog#readme",
+
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "devDependencies": {
+    "vuepress": "^1.7.1"
+  }
+}
