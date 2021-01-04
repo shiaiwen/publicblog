@@ -13,13 +13,15 @@
     "url": "https://github.com/aiwen19950203/publicblog/issues"
   },
   "homepage": "https://github.com/aiwen19950203/publicblog#readme",
-
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vuepress dev docs",
-    "build": "vuepress build docs"
+    "build": "vuepress build docs",
+    "deploy": "bash deploy.sh"
   },
   "devDependencies": {
     "vuepress": "^1.7.1"
+  },
+  "dependencies": {
+    "moment": "^2.29.1"
   }
 }

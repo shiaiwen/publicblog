@@ -1,6 +1,12 @@
+const moment = require('moment');
+moment.locale('zh-cn')
+
+
+
 module.exports = {
     title: '努力的沧州人',
     description: '努力的沧州人的技术博客',
+    base: '/publicblog/',
     head: [
         [
             'meta',
@@ -11,6 +17,11 @@ module.exports = {
     ],
     themeConfig: {
         logo: '/assets/img/hero.png',
+
+        lastUpdated: '更新时间', // string | boolean
+
+
+        
         // navbar: false,
         nav: [
             { text: '主页', link: '/' },
@@ -50,8 +61,19 @@ module.exports = {
         //     ]
         //   }]
 
-        themeConfig: {
-          lastUpdated: '更新时间', // string | boolean
-        }
+
     },
+    plugins: [
+      [
+        '@vuepress/last-updated',
+        {
+          transformer: (timestamp) => {
+            // 不要忘了安装 moment
+            const moment = require('moment')
+          
+            return moment(timestamp).format('LLLL')
+          }
+        }
+      ]
+    ]
 }

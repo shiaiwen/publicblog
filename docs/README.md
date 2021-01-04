@@ -1,7 +1,7 @@
 ---
 home: true
 heroImage: /assets/img/hero.png
-heroText: 凝聚沉淀
+heroText: 小爱同学
 tagline: 业精于勤荒于嬉，行成于思毁于随
 actionText: Start →
 actionLink: /about/
