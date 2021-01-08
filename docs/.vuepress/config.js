@@ -6,7 +6,7 @@ moment.locale('zh-cn')
 module.exports = {
     title: '努力的沧州人',
     description: '努力的沧州人的技术博客',
-    base: '/publicblog/',
+    // base: '/publicblog/',
     head: [
         [
             'meta',
