@@ -1,7 +1,5 @@
-const moment = require('moment');
+const moment = require('moment')
 moment.locale('zh-cn')
-
-
 
 module.exports = {
     title: '努力的沧州人',
@@ -20,8 +18,6 @@ module.exports = {
 
         lastUpdated: '更新时间', // string | boolean
 
-
-        
         // navbar: false,
         nav: [
             { text: '主页', link: '/' },
@@ -47,36 +43,36 @@ module.exports = {
         // ]
 
         sidebar: [
-          '/',
-          '/about/',
+            '/about/',
 
-          {
-            title: '工具',   // 必要的
-            path: '/tools/',      // 可选的, 标题的跳转链接，应为绝对路径且必须存在
-            collapsable: false, // 可选的, 默认值是 true,
-            sidebarDepth: 1,    // 可选的, 默认值是 1
-            children: [
-              '/tools/vuepress',
-              // '/css/css2',
-              // '/css/css3',
-            ]
-          }
-        
-        ]
-
-
+            {
+                title: '工具', // 必要的
+                path: '/AuxiliaryTools/', // 可选的, 标题的跳转链接，应为绝对路径且必须存在
+                collapsable: false, // 可选的, 默认值是 true,
+                sidebarDepth: 1, // 可选的, 默认值是 1
+                children: [
+                    '/AuxiliaryTools/vuepress',
+                    // '/css/css2',
+                    // '/css/css3',
+                ],
+            },
+        ],
     },
-    plugins: [
-      [
-        '@vuepress/last-updated',
-        {
-          transformer: (timestamp) => {
-            // 不要忘了安装 moment
-            const moment = require('moment')
-          
-            return moment(timestamp).format('LLLL')
-          }
-        }
-      ]
-    ]
+    plugins: {
+        '@vuepress/last-updated': {
+            transformer: (timestamp) => {
+                return moment(timestamp).format('LLLL')
+            },
+        },
+        '@vssue/vuepress-plugin-vssue': {
+            // 设置 `platform` 而不是 `api`
+            platform: 'github-v4',
+            autoCreateIssue: true,
+            // 其他的 Vssue 配置
+            owner: 'aiwen19950203',
+            repo: 'publicblog',
+            clientId: '3381967dfe33a93ad9cf',
+            clientSecret: '849646589c86af776ebdd7d6cbaea64a4217682e',
+        },
+    },
 }
